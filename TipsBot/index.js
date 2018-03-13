@@ -17,7 +17,7 @@ exports.tipsBot = function tipsBot (req, res) {
   
   var sender = req.body.message.sender.displayName;
   var image = req.body.message.sender.avatarUrl;
-  var msg = req.body.message.text;
+  var msg = req.body.message.text.replace("@Dave ","");
   var card = createMessage(sender, image, msg);
   
   var tobq = {"sender":sender,"image":image,"message":msg};
